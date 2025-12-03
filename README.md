@@ -82,27 +82,23 @@ lazygit branch
 feature-ai-commit-generation
 ```
 
-### Advanced: Shell Widget Integration
+### Advanced: Shell Alias Integration (Maximum Laziness Achieved 😴)
 
-For the ultimate lazy workflow, add this to your `~/.zshrc` to pre-fill your command line with the generated commit command:
+Because typing `lazygit commit` is still too much work, add these aliases to your `~/.zshrc`:
 
 ```zsh
-# Lazy Git widget - press Ctrl+G to auto-fill commit message
-function _lazygit_commit_widget() {
-    # Get the full git commit command
-    local cmd=$(lazygit commit 2>/dev/null)
-    
-    if [[ -n "$cmd" ]]; then
-        BUFFER="$cmd"
-        CURSOR=$#BUFFER
-    fi
-}
-
-zle -N _lazygit_commit_widget
-bindkey '^G' _lazygit_commit_widget  # Ctrl+G to trigger
+# Lazy Git aliases - for the truly lazy developer
+alias lc='print -z "$(lazygit commit)"'   # Auto-fill commit message
+alias lb='print -z "$(lazygit branch)"'   # Auto-fill branch name
 ```
 
-Now just press **Ctrl+G** in your terminal and the commit command appears ready to edit!
+**Usage:**
+1. Stage your changes: `git add .`
+2. Type `lc` and press Enter
+3. The commit command magically appears in your terminal, ready to edit
+4. Press Enter again to commit
+
+We've now reduced your workflow to literally two keystrokes. You're welcome. 🛋️
 
 ## 🏗️ Architecture
 
@@ -173,19 +169,23 @@ echo "new feature" >> file.go
 # 2. Stage them
 git add file.go
 
-# 3. Generate commit message
+# 3. Generate commit message (or use the alias: lc)
 lazygit commit
 # Output: git commit -m "feat: add new feature implementation"
 
-# 4. Copy and paste, or use the widget!
+# 4. Or be even lazier with the alias
+lc  # That's it. Two characters. You've peaked.
 ```
 
 ### Generate Branch Name
 
 ```bash
-# You're working on a login feature
+# You're working on a login feature (or use the alias: lb)
 lazygit branch
 # Output: feature-user-authentication-login
+
+# Ultra-lazy mode:
+lb  # Command appears, ready to create your branch
 ```
 
 ## 🤝 Contributing
