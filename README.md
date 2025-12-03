@@ -3,12 +3,11 @@
 [![Go Version](https://img.shields.io/badge/Go-1.25%2B-00ADD8?logo=go)](https://golang.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**Lazy Git** is a CLI tool that leverages AI to automatically generate meaningful git commit messages and branch names based on your code changes. Never write "fix stuff" or "update" again!
-## ✨ Features
+**Lazy Git** is a CLI tool that leverages AI to automatically generate meaningful git commit messages and branch names based on your code changes. Never write "fix stuff" or "update" again
+## Features
 
 - 🎯 **Smart Commit Messages** - Analyzes staged changes and generates conventional commit messages
 - 🌿 **Branch Name Generation** - Creates descriptive branch names from your diffs
-- 🏗️ **Clean Architecture** - Built with interfaces, dependency injection, and testability in mind
 
 
 ## 📦 Installation

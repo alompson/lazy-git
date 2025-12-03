@@ -1,4 +1,4 @@
-module github.com/alompson/ai-commit-cli
+module github.com/alompson/lazy-git
 
 go 1.25.4
 
